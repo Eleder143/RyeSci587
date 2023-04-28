@@ -27,3 +27,13 @@ nrow(data[!duplicated(data$Invoice),]) # Hay 28K pedidos diferentes
 
 data %>% group_by(Invoice) %>% summarise(mean(Price))
 
+
+# Numero de productos por pedido
+
+data %>% group_by(Invoice) %>% summarise(sum(Quantity))
+
+
+# Precio por pedido
+
+data %>% group_by(Invoice) %>% summarise(sum(Quantity * Price))
+
